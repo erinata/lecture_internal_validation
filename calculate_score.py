@@ -1,5 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn import linear_model
+from matplotlib import pyplot as plt
 
 dataset = pd.read_csv("dataset.csv")
 
@@ -26,6 +28,13 @@ print(data_training.shape)
 print(data_test.shape)
 print(target_training.shape)
 print(target_test.shape)
+
+
+linear_machine = linear_model.LinearRegression()
+linear_machine.fit(data_training,target_training)
+prediction = linear_machine.predict(data_test)
+ 
+print(prediction)
 
 
 
